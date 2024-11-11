@@ -1,0 +1,10 @@
+# Docker composer file for freedns_update
+version: '3.8'
+services:
+  freedns_update:
+    image: "ghcr.io/fvincenzo/freedns_update:main"
+    container_name: freedns_update
+    environment:
+      TOKENS: "T1;T2;...;Tn" #provided by the afraid.org version 2 dynamic update interface
+      HOURS_DELAY: "12" #optional, defaults to 6 hours between updates
+    restart: always
